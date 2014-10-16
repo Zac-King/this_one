@@ -1,0 +1,59 @@
+Gun Sheild programming thoughts
+
+
+entity.h
+player.h
+   player.cpp
+enemy.h
+   enemy.cpp
+bullet.h
+   bullet.cpp
+
+main.cpp
+
+enum GameState { MAIN, MAINMENU, PAUSE, EXIT };
+
+Entity header #include Entity.h
+
+class Entity
+{
+	private:
+	int m_corX, m_corY, m_sprite;
+	
+	
+	public:
+		virtual void onHit()						{}
+			// player->enemy || enemy->shrine || enemy->player
+		__________________________________________________________________
+		virtual void onKeyPressed(char a)				{}
+			//condition on how to update player
+		__________________________________________________________________
+		virtual void onMouseMove()					{}
+			//alternate choice to acess pause menu
+		__________________________________________________________________
+		virtual void onGameStart()					{}
+			//begin game and initialize gameplay area
+		__________________________________________________________________
+		virtual void onUpdate(float dt)					{}
+			//update (objects && walls && score)
+		__________________________________________________________________
+		virtual void onDraw()						{}
+			//Draw sprites
+		__________________________________________________________________
+		virtual void onEnemiesClear()					{}
+			//clear enemy objects
+		__________________________________________________________________
+		virtual void onBulletClear()					{}
+			//clear bullet object when hits an (enemy || Boundry)
+		__________________________________________________________________
+};
+
+class Player : public Entity
+{
+	private:
+		double m_score, m_health, 
+		
+	public:
+		Entity : onKeyPressed(char a)
+	
+}
